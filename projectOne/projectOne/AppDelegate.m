@@ -18,17 +18,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    /*
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
-    
-    /*
-     Create a variable using the float data type.
-     Cast the float to an int.
-     Using NSLog, output both the initial float value as well as the int value.
      */
+    
+    
+    //Sticking with astronomy theme.
+    //Creating several variables to make this work out.
+    //Use %.0f to get rid of trailing decimal places.
+    float telescopeFocalLength = 2032;
+    float eyepieceFocalLength = 10;
+    float focalPower = telescopeFocalLength / eyepieceFocalLength;
+    float observingPower = (int)focalPower;
+    NSLog(@"This configuration yields %f power", focalPower);
+    NSLog(@"Observing at %.0f power", observingPower);
     
     
     /*
