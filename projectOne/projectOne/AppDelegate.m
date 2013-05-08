@@ -26,10 +26,11 @@
     return YES;
      */
     
+    // Sticking with astronomy theme.
     
-    //Sticking with astronomy theme.
-    //Creating several variables to make this work out.
-    //Use %.0f to get rid of trailing decimal places.
+    // float variable, cast to int, output to NSLog
+    // Creating several variables to make this work out.
+    // Use %.0f to get rid of trailing decimal places.
     float telescopeFocalLength = 2032;
     float eyepieceFocalLength = 10;
     float focalPower = telescopeFocalLength / eyepieceFocalLength;
@@ -37,33 +38,64 @@
     NSLog(@"This configuration yields %f power", focalPower);
     NSLog(@"Observing at %.0f power", observingPower);
     
+    // AND, OR Comparison.
+    // float, int and BOOL variables.
+    // BOOL values YES or NO, all caps.
+    // if, else if, else check.
+    float visibility = 16.5;
+    int temp = 68;
+    BOOL homeworkDone = YES;
+    if ((homeworkDone = NO) || (visibility < 9.5))
+    {
+        NSLog(@"I should probably stay in tonight.");
+    }
+    else if ((temp < 80) && (temp > 40))
+    {
+        NSLog(@"The weather is good for observing tonight.");
+    }
+    else
+    {
+        NSLog(@"I wish the weather was always good, the skies were always clear, and the homework was always done");
+    }
     
-    /*
-     Perform an AND, OR comparison. Use float, int and BOOL types. BOOL values should be YES or NO and written in all caps.
-     */
+    // Single For loop.
+    // Collecting image data with a one shot color camera.
+    for (int i = 1; i <= 10; i++)
+    {
+        NSLog(@"Collecting color image data for %d minutes.", i);
+    }
     
+    // Nested loop printing out values to the console.
+    // Collecting Image Data with mono CCD camera and color filters.
+    for (int c = 1; c <= 3; c++)
+    {
+        NSLog(@"Using color filter number %d", c);
+        for (int i = 1; i<= 10; i++)
+        {
+            NSLog(@"Collecting image data with filter number %d for %d minutes.", c, i);
+        }
+    }
     
-    /*
-     Use an if, else if and else check using any of the data types of your choice.
-     */
+    // While loop that increments int variable and outputs to the console.
+    // Fast mono planetary video camera 60FPS.
+    int memCardPercentFull = 0;
+    while ( memCardPercentFull < 100 )
+    {
+        NSLog(@"Video Camera Storage %d percent full.", memCardPercentFull);
+        memCardPercentFull++;
+    }
     
-    
-    /*
-     Perform a single for loop printing out values to the console.
-     */
-    
-    
-    /*
-     Perform a nested loop printing out values to the console.
-     */
-    
-    
-    /*
-     Perform a while loop that increments an int variable and outputs to the console.
-     */
-    
-    
+    // Notes BOOL doesn't work properly, need to research more.
+    // Ran out of time for code review...will continue to research and fix.
+    // Is it OK that I combined AND, OR comparison and if, else if, else?
+    // Like SDI, the story is harder for me than the code.
+    // If I have enough time, I will make the nested loop log the filter
+    //      color instead of number. Need to research OBJ-C more first.
+    // Also, need to research default code for this function when I get
+    //      Time. I just commented it out.
 }
+    
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
