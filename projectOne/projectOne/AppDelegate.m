@@ -38,7 +38,7 @@
     float visibility = 16.5;
     int temp = 68;
     BOOL homeworkDone = YES;
-    if ((homeworkDone = NO) || (visibility < 9.5))
+    if ((homeworkDone == NO) || (visibility < 9.5))
     {
         NSLog(@"I should probably stay in tonight.");
     }
