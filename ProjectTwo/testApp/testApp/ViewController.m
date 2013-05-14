@@ -24,10 +24,10 @@
     UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0,0,320,32)];
     if (title != nil)
     {
-        title.backgroundColor = [UIColor redColor];
-        title.text = @"this is my title";
+        title.backgroundColor = [UIColor whiteColor];
+        title.text = @"The Lord of the Rings Trilogy";
         title.textAlignment = NSTextAlignmentCenter;
-        title.textColor = [UIColor whiteColor];
+        title.textColor = [UIColor blackColor];
         //Add label to view
         [self.view addSubview:title];
     }
@@ -38,7 +38,7 @@
         author.backgroundColor = [UIColor redColor];
         author.text = @"Author:";
         author.textAlignment = NSTextAlignmentRight;
-        author.textColor = [UIColor whiteColor];
+        author.textColor = [UIColor grayColor];
         //Add label to view
         [self.view addSubview:author];
     }
@@ -46,10 +46,10 @@
     UILabel *authorName = [[UILabel alloc] initWithFrame:CGRectMake(100,37,220,32)];
     if (authorName != nil)
     {
-        authorName.backgroundColor = [UIColor blueColor];
-        authorName.text = @"Author Name Here";
+        authorName.backgroundColor = [UIColor greenColor];
+        authorName.text = @"J.R.R. Tolkien";
         authorName.textAlignment = NSTextAlignmentLeft;
-        authorName.textColor = [UIColor whiteColor];
+        authorName.textColor = [UIColor orangeColor];
         //Add label to view
         [self.view addSubview:authorName];
     }
@@ -57,10 +57,10 @@
     UILabel *published = [[UILabel alloc] initWithFrame:CGRectMake(0,74,100,32)];
     if (published != nil)
     {
-        published.backgroundColor = [UIColor redColor];
+        published.backgroundColor = [UIColor lightGrayColor];
         published.text = @"Published:";
         published.textAlignment = NSTextAlignmentRight;
-        published.textColor = [UIColor whiteColor];
+        published.textColor = [UIColor darkGrayColor];
         //Add label to view
         [self.view addSubview:published];
     }
@@ -69,9 +69,9 @@
     if (pubDate != nil)
     {
         pubDate.backgroundColor = [UIColor blueColor];
-        pubDate.text = @"Published Date Here";
+        pubDate.text = @"1954";
         pubDate.textAlignment = NSTextAlignmentLeft;
-        pubDate.textColor = [UIColor whiteColor];
+        pubDate.textColor = [UIColor yellowColor];
         //Add label to view
         [self.view addSubview:pubDate];
     }
@@ -79,10 +79,10 @@
     UILabel *summary = [[UILabel alloc] initWithFrame:CGRectMake(0,111,100,32)];
     if (summary != nil)
     {
-        summary.backgroundColor = [UIColor redColor];
-        summary.text = @"Summary:";
-        summary.textAlignment = NSTextAlignmentRight;
-        summary.textColor = [UIColor whiteColor];
+        summary.backgroundColor = [UIColor cyanColor];
+        summary.text = @"Summary";
+        summary.textAlignment = NSTextAlignmentLeft;
+        summary.textColor = [UIColor magentaColor];
         //Add label to view
         [self.view addSubview:summary];
     }
@@ -90,10 +90,12 @@
     UILabel *mySummary = [[UILabel alloc] initWithFrame:CGRectMake(0,148,320,120)];
     if (mySummary != nil)
     {
-        mySummary.backgroundColor = [UIColor redColor];
-        mySummary.text = @"Summary:";
-        mySummary.textAlignment = NSTextAlignmentLeft;
-        mySummary.textColor = [UIColor whiteColor];
+        mySummary.backgroundColor = [UIColor brownColor];
+        mySummary.text = @"Classic good vs. evil tail of Frodo the hobbit and his journey to Mordor to destroy the ring of power.";
+        mySummary.textAlignment = NSTextAlignmentCenter;
+        mySummary.numberOfLines = 0;
+        mySummary.lineBreakMode = NSLineBreakByWordWrapping;
+        mySummary.textColor = [UIColor purpleColor];
         //Add label to view
         [self.view addSubview:mySummary];
     }
@@ -103,7 +105,7 @@
     {
         items.backgroundColor = [UIColor redColor];
         items.text = @"List of Items:";
-        items.textAlignment = NSTextAlignmentRight;
+        items.textAlignment = NSTextAlignmentLeft;
         items.textColor = [UIColor whiteColor];
         //Add label to view
         [self.view addSubview:items];

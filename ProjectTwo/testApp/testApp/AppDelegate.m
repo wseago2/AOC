@@ -26,6 +26,15 @@
     self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    //create NSArray
+    NSArray *myItems = [[NSArray alloc] initWithObjects:@"Orcs", @"Trolls", @"Goblins", @"Balrogs", @"Cave Trolls", nil];
+//    NSLog(myItems[0]);
+//    NSLog(myItems[1]);
+//    NSLog(myItems[2]);
+//    NSLog(myItems[3]);
+//    NSLog(myItems[4]);
+    
     return YES;
 }
 
