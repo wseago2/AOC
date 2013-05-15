@@ -91,7 +91,7 @@
     if (mySummary != nil)
     {
         mySummary.backgroundColor = [UIColor brownColor];
-        mySummary.text = @"Classic good vs. evil tail of Frodo the hobbit and his journey to Mordor to destroy the ring of power.";
+        mySummary.text = @"Classic good vs. evil tail of Frodo the hobbit and his journey to Mordor to destroy the ring of power in Mount Doom.";
         mySummary.textAlignment = NSTextAlignmentCenter;
         mySummary.numberOfLines = 0;
         mySummary.lineBreakMode = NSLineBreakByWordWrapping;
