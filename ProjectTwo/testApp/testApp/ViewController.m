@@ -103,10 +103,10 @@
     UILabel *items = [[UILabel alloc] initWithFrame:CGRectMake(0,273,100,32)];
     if (items != nil)
     {
-        items.backgroundColor = [UIColor redColor];
+        items.backgroundColor = [UIColor colorWithRed:0.851 green:0.702 blue:0.518 alpha:1];
         items.text = @"List of Items:";
         items.textAlignment = NSTextAlignmentLeft;
-        items.textColor = [UIColor whiteColor];
+        items.textColor = [UIColor colorWithRed:0.451 green:0.310 blue:0.188 alpha:1];
         //Add label to view
         [self.view addSubview:items];
     }
@@ -146,11 +146,11 @@
     UILabel *itemList = [[UILabel alloc] initWithFrame:CGRectMake(0,310,320,48)];
     if (itemList != nil)
     {
-        itemList.backgroundColor = [UIColor redColor];
+        itemList.backgroundColor = [UIColor colorWithRed:0.275 green:0.349 blue:0.294 alpha:1];
         itemList.text = mutableItems;
         itemList.textAlignment = NSTextAlignmentCenter;
         itemList.numberOfLines = 2;
-        itemList.textColor = [UIColor whiteColor];
+        itemList.textColor = [UIColor colorWithRed:0.651 green:0.592 blue:0.486 alpha:1];
         //Add label to view
         [self.view addSubview:itemList];
     }
