@@ -111,6 +111,33 @@
         [self.view addSubview:items];
     }
     
+// Create Strings of Items
+    NSString *item0 = @"Orcs";
+    NSString *item1 = @"Trolls";
+    NSString *item2 = @"Goblins";
+    NSString *item3 = @"Balrogs";
+    NSString *item4 = @"Cave Trolls";
+    
+// Create Array
+    NSArray *myItems = [NSArray arrayWithObjects: item0, item1, item2, item3, item4, nil];
+    
+// Create Mutable String
+    NSMutableString *mutableItems = [[NSMutableString alloc] init];
+    
+// Append array items to mutable string.
+    for (int i = 0; i < myItems.count; i++)
+    {
+        [mutableItems appendString:[NSString stringWithFormat:@"%@", myItems[i]]];
+    }
+    
+// NSLog(mutableItems);
+    
+// Insert commas between array items and add "and".
+    [mutableItems insertString:@", " atIndex:4];
+    [mutableItems insertString:@", " atIndex:12];
+    NSLog(mutableItems);
+    
+    
     UILabel *itemList = [[UILabel alloc] initWithFrame:CGRectMake(0,310,320,48)];
     if (itemList != nil)
     {
