@@ -132,18 +132,24 @@
     
 // NSLog(mutableItems);
     
-// Insert commas between array items and add "and".
+// Insert commas between array items.
     [mutableItems insertString:@", " atIndex:4];
     [mutableItems insertString:@", " atIndex:12];
-    NSLog(mutableItems);
+    [mutableItems insertString:@", " atIndex:21];
+    [mutableItems insertString:@", " atIndex:30];
+    
+// Add "and".
+    [mutableItems insertString:@"and " atIndex:32];
+//    NSLog(mutableItems);
     
     
     UILabel *itemList = [[UILabel alloc] initWithFrame:CGRectMake(0,310,320,48)];
     if (itemList != nil)
     {
         itemList.backgroundColor = [UIColor redColor];
-        itemList.text = @"Items:";
-        itemList.textAlignment = NSTextAlignmentLeft;
+        itemList.text = mutableItems;
+        itemList.textAlignment = NSTextAlignmentCenter;
+        itemList.numberOfLines = 2;
         itemList.textColor = [UIColor whiteColor];
         //Add label to view
         [self.view addSubview:itemList];
