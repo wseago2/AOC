@@ -125,21 +125,34 @@
     NSMutableString *mutableItems = [[NSMutableString alloc] init];
     
 // Append array items to mutable string.
+// Add commas with for loop.
+// Add "and" with if, else if, else statement inside of for loop.
     for (int i = 0; i < myItems.count; i++)
     {
-        [mutableItems appendString:[NSString stringWithFormat:@"%@", myItems[i]]];
+        if (i == (myItems.count) - 2)
+        {
+            [mutableItems appendString:[NSString stringWithFormat:@"%@ and ", myItems[i]]];
+        }
+        else if (i == (myItems.count) - 1)
+        {
+            [mutableItems appendString:[NSString stringWithFormat:@"%@", myItems[i]]];
+        }
+        else
+        {
+            [mutableItems appendString:[NSString stringWithFormat:@"%@, ", myItems[i]]];
+        }
     }
     
 // NSLog(mutableItems);
     
 // Insert commas between array items.
-    [mutableItems insertString:@", " atIndex:4];
-    [mutableItems insertString:@", " atIndex:12];
-    [mutableItems insertString:@", " atIndex:21];
-    [mutableItems insertString:@", " atIndex:30];
+//    [mutableItems insertString:@", " atIndex:4];
+//    [mutableItems insertString:@", " atIndex:12];
+//    [mutableItems insertString:@", " atIndex:21];
+//    [mutableItems insertString:@", " atIndex:30];
     
 // Add "and".
-    [mutableItems insertString:@"and " atIndex:32];
+//    [mutableItems insertString:@"and " atIndex:32];
 //    NSLog(mutableItems);
     
     
