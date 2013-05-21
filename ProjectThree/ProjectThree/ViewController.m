@@ -51,7 +51,10 @@
 }
 
 //DisplayAlertWithString function
-
+-(void)DisplayAlertWithString:(NSString*)dawsString
+{
+    
+}
 
 
 
