@@ -68,7 +68,6 @@
  
 //Call the Append function with two NSStrings.
 //Capture the result and display a UIAlertView with the appended string
-//using displayAlertWithString
     NSString *alertString = [self Append:@"This is very different" appendWith:@" than javascript."];
 //    NSLog(@"%@", alertString);
     UIAlertView *myAlert = [[UIAlertView alloc]
@@ -78,7 +77,17 @@
                             cancelButtonTitle:@"OK"
                             otherButtonTitles:nil];
     [myAlert show];
-    [myAlert release];
+    
+//Calling Add function and capturing result in a variable mySum.
+    int mySum = [self Add:1 toInt:2];
+//    NSLog(@"%d", mySum);    
+//Bundle mySum into an NSNumber and convert it to a string.
+    NSNumber *returnedInteger = [[NSNumber alloc] initWithInt:mySum];
+//    NSLog(@"returnedInteger equals %@", returnedInteger);
+    NSString *integerToString = [returnedInteger stringValue];
+//    NSLog(@"integerToString equals %@", integerToString);
+//Pass the converted string to DisplayAlertWithString function.
+    [self DisplayAlertWithString:integerToString];
     
     
     [super viewDidLoad];
