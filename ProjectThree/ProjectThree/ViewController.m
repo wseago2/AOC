@@ -50,13 +50,12 @@
     return myNewString;
 }
 
-//DisplayAlertWithString function
--(void)DisplayAlertWithString:(NSString*)dawsString
+//DisplayAlertWithString function.
+-(void)DisplayAlertWithString:(NSString*)myAlertMessage
 {
-//    NSLog(@"This passed through DisplayAlertWithString %@", dawsString);
     UIAlertView *dawsAlert = [[UIAlertView alloc]
-                            initWithTitle: @"Hours Spent on Project"
-                            message: [NSString stringWithFormat:@"The number is %@", dawsString]
+                            initWithTitle: @"Announcement"
+                            message: myAlertMessage
                             delegate: nil
                             cancelButtonTitle:@"OK"
                             otherButtonTitles:nil];
@@ -66,8 +65,6 @@
     }
 }
 
-
-
 - (void)viewDidLoad
 {
     
@@ -75,32 +72,36 @@
 //    NSLog(@"%@", ([self Compare: 9 toInt: 9] ? @"YES" : @"NO"));
 //    NSLog(@"%@", ([self Compare: 9 toInt: 5] ? @"YES" : @"NO"));
 //    NSLog(@"%d", [self Add: 8 toInt:7]);
-    
-//Call the Append function with two NSStrings.
-//Capture the result and display a UIAlertView with the appended string
+ 
+//Call append function, send through DAWS.
     NSString *alertString = [self Append:@"This is very different" appendWith:@" than javascript."];
-//  NSLog(@"%@", alertString);
-    UIAlertView *myAlert = [[UIAlertView alloc]
-                            initWithTitle: @"Announcement"
-                            message: alertString
-                            delegate: nil
-                            cancelButtonTitle:@"OK"
-                            otherButtonTitles:nil];
-    if (myAlert != nil)
-    {
-        [myAlert show];
-    }
+    [self DisplayAlertWithString:alertString];//call DAWS with message parameter.
     
-//Calling Add function and capturing result in a variable mySum.
+
+//Call Add function.
     int mySum = [self Add:6 toInt:5];
-//    NSLog(@"%d", mySum);    
-//Bundle mySum into an NSNumber and convert it to a string.
-    NSNumber *returnedInteger = [[NSNumber alloc] initWithInt:mySum];
+    NSNumber *returnedInteger = [[NSNumber alloc] initWithInt:mySum];//change mySum to NSNumber
+    NSString *myMessage = [NSString stringWithFormat:@"The number is "];//create message
+    NSString *myNumber = [returnedInteger stringValue];//convert to string and store in variable
+    NSString *appendedAlertMessage = [self Append:myMessage appendWith:myNumber];//append message.
+    [self DisplayAlertWithString:appendedAlertMessage];//call DAWS with message parameter.
+//    NSLog(@"mySum equals %d", mySum);
 //    NSLog(@"returnedInteger equals %@", returnedInteger);
-    NSString *integerToString = [returnedInteger stringValue];
 //    NSLog(@"integerToString equals %@", integerToString);
-//Pass the converted string to DisplayAlertWithString function.
-    [self DisplayAlertWithString:integerToString];
+//    NSLog(@"myMessage equals: %@", myMessage);
+//    NSLog(@"%@", myNumber);
+//    NSLog(@"%@", appendedAlertMessage);
+    
+//Calling the Compare function.
+    int hoursStudy = 5;
+    int hoursCoding = 5;
+    BOOL myComparison = [self Compare:hoursStudy toInt:hoursCoding];
+    NSString *comparisonString = [NSString stringWithFormat:@"This project took %d hours of research and %d hours of coding.", hoursStudy, hoursCoding];
+    if (myComparison ==YES)
+    {
+    [self DisplayAlertWithString:comparisonString];
+    }
+
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
