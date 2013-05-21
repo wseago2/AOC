@@ -37,8 +37,24 @@
     }
 }
 
+//Append function.
+//Two parameters myFirstString and mySecondString.
+//Creates NSMutable string called appendString.
+//Appends myFirstString to appendString, mySecondString to appendString.
+//Creates NSString myNewString from appendString.
+//Returns myNewString.
+-(NSString*)Append:(NSString*)myFirstString appendWith:(NSString*)mySecondString
+{
+    NSMutableString *appendString = [[NSMutableString alloc] initWithString:myFirstString];
+    NSString *myNewString = [appendString stringByAppendingString:mySecondString];
+    return myNewString;
+}
+
 - (void)viewDidLoad
 {
+    
+//    NSLog(@"%d", [self Add: 8 toInt:7]); //Hallelujah that worked.
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
