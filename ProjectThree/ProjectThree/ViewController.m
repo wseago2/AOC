@@ -14,6 +14,12 @@
 
 @implementation ViewController
 
+//Add function
+-(int)Add:(NSInteger)myNumberOne toInt:(NSInteger)myNumberTwo
+{
+    return (myNumberOne + myNumberTwo);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
