@@ -50,13 +50,33 @@
     return myNewString;
 }
 
+//DisplayAlertWithString function
+
+
+
+
 - (void)viewDidLoad
 {
     
 //    NSLog(@"%@", [self Append:@"I think " appendWith:@"this should work!"]);
-//    NSLog(@"%d", [self Add: 8 toInt:7]); 
 //    NSLog(@"%@", ([self Compare: 9 toInt: 9] ? @"YES" : @"NO"));
-      
+//    NSLog(@"%@", ([self Compare: 9 toInt: 5] ? @"YES" : @"NO"));
+//    NSLog(@"%d", [self Add: 8 toInt:7]);
+ 
+//Call the Append function with two NSStrings.
+//Capture the result and display a UIAlertView with the appended string
+//using displayAlertWithString
+    NSString *alertString = [self Append:@"This is very different" appendWith:@" than javascript."];
+//    NSLog(@"%@", alertString);
+    UIAlertView *myAlert = [[UIAlertView alloc]
+                            initWithTitle: @"Announcement"
+                            message: alertString
+                            delegate: nil
+                            cancelButtonTitle:@"OK"
+                            otherButtonTitles:nil];
+    [myAlert show];
+    [myAlert release];
+    
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
