@@ -53,7 +53,17 @@
 //DisplayAlertWithString function
 -(void)DisplayAlertWithString:(NSString*)dawsString
 {
-    
+//    NSLog(@"This passed through DisplayAlertWithString %@", dawsString);
+    UIAlertView *dawsAlert = [[UIAlertView alloc]
+                            initWithTitle: @"Hours Spent on Project"
+                            message: [NSString stringWithFormat:@"The number is %@", dawsString]
+                            delegate: nil
+                            cancelButtonTitle:@"OK"
+                            otherButtonTitles:nil];
+    if (dawsAlert != nil)
+    {
+    [dawsAlert show];
+    }
 }
 
 
@@ -65,21 +75,24 @@
 //    NSLog(@"%@", ([self Compare: 9 toInt: 9] ? @"YES" : @"NO"));
 //    NSLog(@"%@", ([self Compare: 9 toInt: 5] ? @"YES" : @"NO"));
 //    NSLog(@"%d", [self Add: 8 toInt:7]);
- 
+    
 //Call the Append function with two NSStrings.
 //Capture the result and display a UIAlertView with the appended string
     NSString *alertString = [self Append:@"This is very different" appendWith:@" than javascript."];
-//    NSLog(@"%@", alertString);
+//  NSLog(@"%@", alertString);
     UIAlertView *myAlert = [[UIAlertView alloc]
                             initWithTitle: @"Announcement"
                             message: alertString
                             delegate: nil
                             cancelButtonTitle:@"OK"
                             otherButtonTitles:nil];
-    [myAlert show];
+    if (myAlert != nil)
+    {
+        [myAlert show];
+    }
     
 //Calling Add function and capturing result in a variable mySum.
-    int mySum = [self Add:1 toInt:2];
+    int mySum = [self Add:6 toInt:5];
 //    NSLog(@"%d", mySum);    
 //Bundle mySum into an NSNumber and convert it to a string.
     NSNumber *returnedInteger = [[NSNumber alloc] initWithInt:mySum];
@@ -88,7 +101,6 @@
 //    NSLog(@"integerToString equals %@", integerToString);
 //Pass the converted string to DisplayAlertWithString function.
     [self DisplayAlertWithString:integerToString];
-    
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
