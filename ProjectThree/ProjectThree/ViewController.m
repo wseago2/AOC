@@ -53,8 +53,10 @@
 - (void)viewDidLoad
 {
     
-//    NSLog(@"%d", [self Add: 8 toInt:7]); //Hallelujah that worked.
+//    NSLog(@"%@", [self Append:@"I think " appendWith:@"this should work!"]);
+//    NSLog(@"%d", [self Add: 8 toInt:7]); 
 //    NSLog(@"%@", ([self Compare: 9 toInt: 9] ? @"YES" : @"NO"));
+      
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
