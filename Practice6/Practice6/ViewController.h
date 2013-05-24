@@ -10,13 +10,14 @@
 
 @interface ViewController : UIViewController
 {
-    
+    int returnValue;
+    int myValue;
+   
 }
-// Declare my function returnValue
-- (int)returnValue;
+
 
 // Declare Add function
--(int)Add:(int)valueOne
-         :(int)valueTwo;
+//-(int)Add:(int)valueOne
+//    toInt:(int)valueTwo;
 
 @end
