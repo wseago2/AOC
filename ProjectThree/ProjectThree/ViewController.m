@@ -15,16 +15,12 @@
 @implementation ViewController
 
 //Add function.
-//Two parameters myNumberOne and myNumberTwo.
-//Returns sum of parameters.
 -(int)Add:(NSInteger)myNumberOne toInt:(NSInteger)myNumberTwo
 {
     return (myNumberOne + myNumberTwo);
 }
 
 //Compare function.
-//Two parameters myBoolOne and myBoolTwo.
-//Returns true if they are equal, else false.
 -(BOOL)Compare:(NSInteger)myBoolOne toInt:(NSInteger)myBoolTwo
 {
     if (myBoolOne == myBoolTwo)
@@ -38,11 +34,6 @@
 }
 
 //Append function.
-//Two parameters myFirstString and mySecondString.
-//Creates NSMutable string called appendString.
-//Appends myFirstString to appendString, mySecondString to appendString.
-//Creates NSString myNewString from appendString.
-//Returns myNewString.
 -(NSString*)Append:(NSString*)myFirstString appendWith:(NSString*)mySecondString
 {
     NSMutableString *appendString = [[NSMutableString alloc] initWithString:myFirstString];
