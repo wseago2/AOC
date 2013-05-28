@@ -119,6 +119,7 @@
             NSString *thisUser = [[NSString alloc] initWithFormat:@"User: %@ has been logged in.", usernameText];
             enterUsername.textColor = [UIColor blueColor];
             enterUsername.text = thisUser;
+            [textField resignFirstResponder];//hide the keyboard so app will remain accessible.
         }
         else
         {
