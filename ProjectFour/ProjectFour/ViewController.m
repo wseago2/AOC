@@ -43,6 +43,16 @@
         [self.view addSubview:textField];
     }
     
+    //create Login button
+    UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    if (loginButton != nil)
+    {
+        loginButton.frame = CGRectMake(200,60,110,32);
+        loginButton.backgroundColor = [UIColor whiteColor];
+        [loginButton setTitle:@"Login" forState:UIControlStateNormal];
+        [self.view addSubview:loginButton];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
