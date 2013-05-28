@@ -23,14 +23,24 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     //create username UILabel
-    UILabel *username = [[UILabel alloc] initWithFrame:CGRectMake(0,10,100,32)];
+    UILabel *username = [[UILabel alloc] initWithFrame:CGRectMake(5,10,100,32)];
     if (username != nil)
     {
-        username.backgroundColor = [UIColor whiteColor];
+        username.backgroundColor = [UIColor redColor]; //Change color to white when done
         username.text = @"Username: ";
         username.textAlignment = NSTextAlignmentCenter;
         username.textColor = [UIColor blackColor];
-        [self.view addSubview:username];
+        [self.view addSubview:username]; 
+    }
+    
+    //create UITextField
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(110,10,205,32)];
+    if (textField != nil)
+    {
+        textField.backgroundColor = [UIColor yellowColor]; //Change color to white when done
+        textField.textAlignment = NSTextAlignmentLeft;
+        textField.textColor = [UIColor blackColor];
+        [self.view addSubview:textField];
     }
     
 }
