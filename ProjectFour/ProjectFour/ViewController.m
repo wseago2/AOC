@@ -48,7 +48,7 @@
         loginButton.backgroundColor = [UIColor whiteColor];
         loginButton.tintColor = [UIColor redColor];
         [loginButton setTitle:@"Login" forState:UIControlStateNormal];
-        //        [loginButton addTarget:self action:@selector(onClick:)];
+        [loginButton addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:loginButton];
     }
     
@@ -71,6 +71,7 @@
         dateButton.backgroundColor = [UIColor whiteColor];
         dateButton.tintColor = [UIColor blueColor];
         [dateButton setTitle:@"Show Date" forState:UIControlStateNormal];
+        [dateButton addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:dateButton];
     }
     
@@ -79,6 +80,7 @@
     if(infoButton != nil);
     {
         infoButton.frame = CGRectMake(10,290,25,25);
+        [infoButton addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:infoButton];
     }
     
@@ -96,7 +98,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    
+}
+
+//onClick function
+-(void)onClick
+{
+    NSLog(@"Button was pressed");
 }
 
 - (void)didReceiveMemoryWarning
