@@ -27,7 +27,7 @@
     UILabel *username = [[UILabel alloc] initWithFrame:CGRectMake(5,10,100,32)];
     if (username != nil)
     {
-        username.backgroundColor = [UIColor redColor]; //Change color to white when done
+        username.backgroundColor = [UIColor whiteColor]; //Change color to white when done
         username.text = @"Username: ";
         username.textAlignment = NSTextAlignmentCenter;
         username.textColor = [UIColor blackColor];
@@ -38,7 +38,8 @@
     UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(110,10,205,32)];
     if (textField != nil)
     {
-        textField.backgroundColor = [UIColor yellowColor]; //Change color to white when done
+        textField.backgroundColor = [UIColor whiteColor]; //Change color to white when done
+        textField.borderStyle = UITextBorderStyleRoundedRect;
         textField.textAlignment = NSTextAlignmentLeft;
         textField.textColor = [UIColor blackColor];
         [self.view addSubview:textField];
@@ -61,8 +62,8 @@
     UILabel *enterUsername = [[UILabel alloc] initWithFrame:CGRectMake(5,120,310,64)];
     if (enterUsername != nil)
     {
-        enterUsername.backgroundColor = [UIColor yellowColor];
-        enterUsername.textColor = [UIColor blackColor];
+        enterUsername.backgroundColor = [UIColor lightGrayColor];
+        enterUsername.textColor = [UIColor blueColor];
         enterUsername.text = @"Please Enter Username";
         enterUsername.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:enterUsername];
@@ -72,7 +73,7 @@
     UIButton *dateButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     if (dateButton != nil)
     {
-        dateButton.frame = CGRectMake(5,200,140,44);
+        dateButton.frame = CGRectMake(5,240,140,44);
         dateButton.backgroundColor = [UIColor whiteColor];
         dateButton.tintColor = [UIColor blueColor];
         dateButton.tag = BUTTON_ONE;
@@ -85,21 +86,19 @@
     UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
     if(infoButton != nil);
     {
-        infoButton.frame = CGRectMake(10,290,25,25);
+        infoButton.frame = CGRectMake(10,320,25,25);
         infoButton.tag = BUTTON_TWO;
         [infoButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:infoButton];
     }
     
     //create info label
-    UILabel *infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(5,330,310,96)];
+    infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(5,345,310,96)];
     if (infoLabel != nil)
     {
-        infoLabel.backgroundColor = [UIColor yellowColor];
-        infoLabel.textColor = [UIColor blackColor];
-        infoLabel.text = @"Information will go here";
+        infoLabel.textColor = [UIColor greenColor];
         infoLabel.textAlignment = NSTextAlignmentLeft;
-        [self.view addSubview:infoLabel];
+        infoLabel.numberOfLines = 2;
     }
     
     [super viewDidLoad];
@@ -110,17 +109,32 @@
 //onClick function
 -(void)onClick:(UIButton*)button
 {
+    //login button
     if (button.tag == BUTTON_ZERO)
     {
         NSLog(@"You pressed button 0");
     }
+    //show date button
     else if (button.tag == BUTTON_ONE)
     {
         NSLog(@"You pressed button 1");
+        NSDate *date = [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        if (dateFormatter != nil)
+        {
+            [dateFormatter setDateFormat:@" MMMM dd, yyyy hh:mm:ss a \n zzzz"];
+            NSString *datetimeString = [dateFormatter stringFromDate:date];
+            UIAlertView *datetimeAlert = [[UIAlertView alloc] initWithTitle:@"Date" message:datetimeString delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [datetimeAlert show];
+        }
     }
+    //info button
     else if (button.tag == BUTTON_TWO)
     {
         NSLog(@"You pressed button 2");
+        infoLabel.text = @"This application was made by\nWesley Seago.";
+        [self.view addSubview:infoLabel];
+        
     }
 }
 

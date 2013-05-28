@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+{
+    UILabel *infoLabel;
+}
 -(void)onClick:(UIButton*)button;
 
 @end
