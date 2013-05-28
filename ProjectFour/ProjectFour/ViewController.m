@@ -47,8 +47,9 @@
         loginButton.frame = CGRectMake(200,60,115,44);
         loginButton.backgroundColor = [UIColor whiteColor];
         loginButton.tintColor = [UIColor redColor];
+        loginButton.tag = 0;
         [loginButton setTitle:@"Login" forState:UIControlStateNormal];
-        [loginButton addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
+        [loginButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:loginButton];
     }
     
@@ -70,8 +71,9 @@
         dateButton.frame = CGRectMake(5,200,140,44);
         dateButton.backgroundColor = [UIColor whiteColor];
         dateButton.tintColor = [UIColor blueColor];
+        dateButton.tag = 1;
         [dateButton setTitle:@"Show Date" forState:UIControlStateNormal];
-        [dateButton addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
+        [dateButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:dateButton];
     }
     
@@ -80,7 +82,8 @@
     if(infoButton != nil);
     {
         infoButton.frame = CGRectMake(10,290,25,25);
-        [infoButton addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
+        infoButton.tag = 2;
+        [infoButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:infoButton];
     }
     
@@ -101,9 +104,20 @@
 }
 
 //onClick function
--(void)onClick
+-(void)onClick:(UIButton*)button
 {
-    NSLog(@"Button was pressed");
+    if (button.tag == 0)
+    {
+        NSLog(@"You pressed button 0");
+    }
+    else if (button.tag == 1)
+    {
+        NSLog(@"You pressed button 1");
+    }
+    else if (button.tag == 2)
+    {
+        NSLog(@"You pressed button 2");
+    }
 }
 
 - (void)didReceiveMemoryWarning

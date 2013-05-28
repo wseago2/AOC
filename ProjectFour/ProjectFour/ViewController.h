@@ -10,6 +10,6 @@
 
 @interface ViewController : UIViewController
 
--(void)onClick
+-(void)onClick:(UIButton*)button;
 
 @end
