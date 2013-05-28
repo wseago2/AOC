@@ -16,9 +16,6 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    
     //set background to white
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -30,7 +27,7 @@
         username.text = @"Username: ";
         username.textAlignment = NSTextAlignmentCenter;
         username.textColor = [UIColor blackColor];
-        [self.view addSubview:username]; 
+        [self.view addSubview:username];
     }
     
     //create UITextField
@@ -47,11 +44,39 @@
     UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     if (loginButton != nil)
     {
-        loginButton.frame = CGRectMake(200,60,110,32);
+        loginButton.frame = CGRectMake(200,60,115,44);
         loginButton.backgroundColor = [UIColor whiteColor];
+        loginButton.tintColor = [UIColor redColor];
         [loginButton setTitle:@"Login" forState:UIControlStateNormal];
+        //        [loginButton addTarget:self action:@selector(onClick:)];
         [self.view addSubview:loginButton];
     }
+    
+    //create enter username UILabel
+    UILabel *enterUsername = [[UILabel alloc] initWithFrame:CGRectMake(5,120,310,64)];
+    if (enterUsername != nil)
+    {
+        enterUsername.backgroundColor = [UIColor yellowColor];
+        enterUsername.textColor = [UIColor blackColor];
+        enterUsername.text = @"Please Enter Username";
+        enterUsername.textAlignment = NSTextAlignmentCenter;
+        [self.view addSubview:enterUsername];
+    }
+    
+    //create show date button
+    UIButton *dateButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    if (dateButton != nil)
+    {
+        dateButton.frame = CGRectMake(5,200,140,44);
+        dateButton.backgroundColor = [UIColor whiteColor];
+        dateButton.tintColor = [UIColor blueColor];
+        [dateButton setTitle:@"Show Date" forState:UIControlStateNormal];
+        [self.view addSubview:dateButton];
+    }
+    
+    [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+    
     
 }
 
