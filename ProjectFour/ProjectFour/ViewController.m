@@ -82,6 +82,17 @@
         [self.view addSubview:infoButton];
     }
     
+    //create info label
+    UILabel *infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(5,330,310,96)];
+    if (infoLabel != nil)
+    {
+        infoLabel.backgroundColor = [UIColor yellowColor];
+        infoLabel.textColor = [UIColor blackColor];
+        infoLabel.text = @"Information will go here";
+        infoLabel.textAlignment = NSTextAlignmentLeft;
+        [self.view addSubview:infoLabel];
+    }
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
