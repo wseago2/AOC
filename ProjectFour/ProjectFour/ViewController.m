@@ -35,7 +35,7 @@
     }
     
     //create UITextField
-    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(110,10,205,32)];
+    textField = [[UITextField alloc] initWithFrame:CGRectMake(110,10,205,32)];
     if (textField != nil)
     {
         textField.backgroundColor = [UIColor whiteColor]; //Change color to white when done
@@ -59,7 +59,7 @@
     }
     
     //create enter username UILabel
-    UILabel *enterUsername = [[UILabel alloc] initWithFrame:CGRectMake(5,120,310,64)];
+    enterUsername = [[UILabel alloc] initWithFrame:CGRectMake(5,120,310,64)];
     if (enterUsername != nil)
     {
         enterUsername.backgroundColor = [UIColor lightGrayColor];
@@ -113,6 +113,18 @@
     if (button.tag == BUTTON_ZERO)
     {
         NSLog(@"You pressed button 0");
+        NSString *usernameText = [textField text];
+        if (usernameText.length >0)
+        {
+            NSString *thisUser = [[NSString alloc] initWithFormat:@"User: %@ has been logged in.", usernameText];
+            enterUsername.textColor = [UIColor blueColor];
+            enterUsername.text = thisUser;
+        }
+        else
+        {
+            enterUsername.textColor = [UIColor redColor];
+            enterUsername.text = @"Username cannot be empty.";
+        }
     }
     //show date button
     else if (button.tag == BUTTON_ONE)

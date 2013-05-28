@@ -12,6 +12,8 @@
 
 {
     UILabel *infoLabel;
+    UITextField *textField;
+    UILabel *enterUsername;
 }
 -(void)onClick:(UIButton*)button;
 
