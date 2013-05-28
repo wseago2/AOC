@@ -74,6 +74,14 @@
         [self.view addSubview:dateButton];
     }
     
+    //create info button
+    UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
+    if(infoButton != nil);
+    {
+        infoButton.frame = CGRectMake(10,290,25,25);
+        [self.view addSubview:infoButton];
+    }
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
